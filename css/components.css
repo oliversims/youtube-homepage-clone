@@ -1,0 +1,185 @@
+/* ===============================================
+   COMPONENTS: VIDEO CARDS (THUMBNAIL + INFO)
+   =============================================== */
+
+/* Container around the video thumbnail image */
+.thumbnail-row {
+  position: relative;  /* So the time badge can be positioned inside it absolutely */
+  max-width: 100%;     /* Prevent it from exceeding the width of its card */
+}
+
+/* Thumbnail image itself */
+.thumbnail {
+  width: 100%;    /* Make the image fill the card width */
+  display: block; /* Remove inline-image gap under the image */
+}
+
+/* Timestamp badge in bottom-right of thumbnail */
+.video-time {
+  position: absolute;           /* Position relative to .thumbnail-row */
+  bottom: 8px;                  /* 8px up from the bottom edge of the thumbnail */
+  right: 8px;                   /* 8px left from the right edge of the thumbnail */
+  background-color: black;      /* Black badge background */
+  color: white;                 /* White text for contrast */
+  font-size: 12px;              /* Small text for time */
+  font-weight: 500;             /* Medium bold text */
+  padding: 2px 6px;             /* Top/bottom 2px, left/right 6px padding inside badge */
+  border-radius: 2px;           /* Slightly rounded corners */
+}
+
+/* Grid for profile picture + text (inside card) */
+.video-info-grid {
+  display: grid;                   /* Use grid layout */
+  grid-template-columns: 50px 1fr; /* First column: 50px (profile), second: remaining space (text) */
+  gap: 0px;                        /* No extra gap between columns */
+  margin-top: 8px;                 /* Space between thumbnail and info */
+}
+
+/* Channel profile picture next to title */
+.profile-picture {
+  width: 40px;          /* Width of the profile picture */
+  border-radius: 20px;  /* Make it circular (half of 40px) */
+  margin-top: 5px;      /* Adjust vertical alignment relative to title text */
+}
+
+/* Video title text under thumbnail */
+.video-title {
+  font-size: 14px;      /* Title font size */
+  font-weight: 500;     /* Medium boldness */
+  margin-top: 5px;      /* Space above title */
+  margin-bottom: 10px;  /* Space below title */
+  line-height: 22px;    /* Distance between lines when title wraps */
+}
+
+/* Channel name text (below title) */
+.video-author {
+  font-size: 12px;              /* Smaller font than title */
+  color: rgb(96, 96, 96);       /* Medium gray */
+  margin-top: 0px;              /* No extra space above */
+  margin-bottom: 0px;           /* No extra space below */
+}
+
+/* View count + upload time */
+.video-stats {
+  font-size: 12px;         /* Same size as author text */
+  color: rgb(96, 96, 96);  /* Same gray color */
+  margin-top: 3px;         /* Small space above stats line */
+}
+
+/* ===============================================
+   COMPONENTS: HEADER ICONS & IMAGES
+   =============================================== */
+
+/* Hamburger icon image (inside left-section) */
+.hamburger-menu {
+  height: 25px;       /* Height of hamburger menu icon */
+  margin-right: 26px; /* Space between hamburger menu and YouTube logo */
+  margin-left: 9px;   /* Small space from absolute left edge */
+  cursor: pointer;    /* Show hand cursor when hovering (clickable) */
+}
+
+/* YouTube logo image */
+.youtube-logo {
+  height: 20px;       /* Logo height */
+  cursor: pointer;    /* Hand cursor on hover */
+  margin-bottom: 0px; /* No extra space below */
+}
+
+/* Icon inside search button */
+.search-icon {
+  height: 24px;  /* Magnifying glass icon height */
+}
+
+/* Icon inside voice button */
+.voice-icon {
+  height: 24px;  /* Microphone icon height */
+}
+
+/* Upload/Create icon (right header) */
+.create-icon {
+  height: 25px;     /* Icon height */
+  cursor: pointer;  /* Hand cursor on hover */
+}
+
+/* YouTube apps grid icon (right header) */
+.apps-icon {
+  height: 25px;     /* Icon height */
+  cursor: pointer;  /* Hand cursor on hover */
+}
+
+/* Container wrapping bell icon and its red count badge */
+.notification-icon-container {
+  position: relative;  /* So .notification-count can use absolute positioning inside */
+  display: flex;       /* Use flexbox */
+  align-items: center; /* Vertically center the bell icon */
+}
+
+/* Bell icon image */
+.notification-icon {
+  height: 25px;     /* Icon height */
+  cursor: pointer;  /* Hand cursor on hover */
+}
+
+/* Red notification count badge on top-right of bell */
+.notification-count {
+  position: absolute;           /* Position relative to .notification-icon-container */
+  top: -3px;                    /* Move upwards slightly (negative value) */
+  right: -7px;                  /* Move outwards to the right */
+  background-color: rgb(204, 0, 0); /* Red background color */
+  color: white;                 /* White number text */
+  font-size: 9.5px;             /* Small text size for count */
+  padding: 2px 5px;             /* Inner padding around the number */
+  border-radius: 10px;          /* Rounded badge (pill shape) */
+  border: 2px solid white;      /* White outline around badge */
+}
+
+/* User profile image (top-right) */
+.user-picture {
+  width: 30px;          /* Width of user profile image */
+  height: 30px;         /* Height of user profile image */
+  border-radius: 50%;   /* Turn it into a circle */
+  display: flex;        /* If it was a <div>, this centers any inner content */
+  object-fit: cover;    /* For <img>: crop the image nicely to fill the circle */
+  margin-left: 7px;     /* Extra space to separate from notification icon */
+}
+
+/* All these icons show pointer cursor on hover */
+.create-icon,
+.apps-icon,
+.notification-icon,
+.user-picture {
+  cursor: pointer;  /* Indicate clickable elements */
+}
+
+/* ===============================================
+   COMPONENTS: TOOLTIP BUBBLES FOR ICONS
+   =============================================== */
+
+/* Wrapper around each icon that has a tooltip (Create, Apps, Notifications, Search, Voice...) */
+.icon-button {
+  position: relative;      /* Allows tooltip (.icon-tooltip) to be positioned inside */
+  display: flex;           /* Center icon inside */
+  align-items: center;     /* Vertically center */
+  justify-content: center; /* Horizontally center */
+  cursor: pointer;         /* Hand cursor when hovering */
+}
+
+/* Tooltip box that appears under icon when hovering */
+.icon-tooltip {
+  position: absolute;                     /* Position relative to .icon-button */
+  bottom: -47px;                          /* Position below the icon (tune this if needed) */
+  background-color: rgba(100, 100, 100, 0.95); /* Semi-transparent gray background */
+  color: white;                           /* White text inside tooltip */
+  font-size: 15px;                        /* Tooltip text size */
+  padding: 4px 8px;                       /* Inner spacing (top/bottom 4px, left/right 8px) */
+  border-radius: 2px;                     /* Slightly rounded corners */
+  white-space: nowrap;                    /* Prevent tooltip text from wrapping to a new line */
+  opacity: 0;                             /* Start invisible */
+  pointer-events: none;                   /* Tooltip itself doesn't capture mouse events */
+  transition: opacity 0.15s ease-in-out;  /* Fade in/out when changing opacity */
+}
+
+/* Show tooltip when hovering the icon-button */
+.icon-button:hover .icon-tooltip {
+  opacity: 1;  /* Make tooltip visible on hover */
+}

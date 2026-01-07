@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- ===============================================
+       HEAD: Meta information, title, and stylesheets
+       =============================================== -->
+  <head>
+    <!-- Character encoding for the document (supports all languages/symbols) -->
+    <meta charset="UTF-8" />
+    
+    <!-- Responsive design: makes page adapt to mobile/tablet/desktop screens -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Page title shown in browser tab -->
+    <title>YouTube Clone</title>
+    
+    <!-- Link to custom CSS files (in order: base → layout → components) -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    
+    <!-- Google Fonts: Roboto font family (YouTube's font) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+  </head>
+
+  <!-- ===============================================
+       BODY: Main content of the page
+       =============================================== -->
+  <body>
+
+    <!-- ===============================================
+         HEADER: Top navigation bar (fixed at top)
+         =============================================== -->
+    <header class="header">
+      
+      <!-- LEFT SECTION: Hamburger menu + YouTube logo -->
+      <div class="left-section">
+        <!-- Hamburger menu icon (opens sidebar on mobile) -->
+        <img class="hamburger-menu" src="https://supersimple.dev/exercises/youtube/icons/hamburger-menu.svg" alt="Menu">
+        
+        <!-- YouTube logo (clickable, goes to homepage) -->
+        <img class="youtube-logo" src="https://supersimple.dev/exercises/youtube/icons/youtube-logo.svg" alt="YouTube Logo"> 
+      </div>
+
+      <!-- MIDDLE SECTION: Search bar + buttons -->
+      <div class="middle-section">
+        <!-- Search input field -->
+        <input class="search-bar" type="text" placeholder="Search" />
+
+        <!-- Search button with tooltip -->
+        <div class="icon-button">
+          <button class="search-button">
+            <img class="search-icon" src="https://supersimple.dev/exercises/youtube/icons/search.svg" alt="Search">
+          </button>
+          <!-- Tooltip appears on hover -->
+          <div class="icon-tooltip">Search</div>
+        </div>
+
+        <!-- Voice search button with tooltip -->
+        <div class="icon-button">
+          <button class="voice-button">
+            <img class="voice-icon" src="https://supersimple.dev/exercises/youtube/icons/voice-search-icon.svg" alt="Voice Search">
+          </button>
+          <!-- Tooltip appears on hover -->
+          <div class="icon-tooltip">Search with your voice</div>
+        </div>
+      </div>
+
+      <!-- RIGHT SECTION: Create, Apps, Notifications, User profile -->
+      <div class="right-section">
+        
+        <!-- Create/Upload icon with tooltip -->
+        <div class="icon-button">
+          <img class="create-icon" src="https://supersimple.dev/exercises/youtube/icons/upload.svg" alt="Create">
+          <div class="icon-tooltip">Create</div>
+        </div>
+
+        <!-- YouTube Apps icon with tooltip -->
+        <div class="icon-button">
+          <img class="apps-icon" src="https://supersimple.dev/exercises/youtube/icons/youtube-apps.svg" alt="YouTube apps">
+          <div class="icon-tooltip">YouTube apps</div>
+        </div>
+
+        <!-- Notifications icon with red badge and tooltip -->
+        <div class="icon-button">
+          <div class="notification-icon-container">
+            <!-- Bell icon -->
+            <img class="notification-icon" src="https://supersimple.dev/exercises/youtube/icons/notifications.svg" alt="Notifications">
+            <!-- Red notification count badge -->
+            <div class="notification-count">3</div>
+          </div>
+          <div class="icon-tooltip">Notifications</div>
+        </div>
+
+        <!-- User profile picture (clickable) -->
+        <img class="user-picture" src="https://media.licdn.com/dms/image/v2/D4D03AQF8S5yYjKpiVA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1704748156295?e=1768435200&v=beta&t=UFRuycaGJLLnCGbCJaP2cWQIS9jCsokuIjS2lbCt7mE" alt="User Profile Picture">
+      </div>
+    </header>
+
+    <!-- ===============================================
+         SIDEBAR: Left navigation menu (fixed on left)
+         =============================================== -->
+    <div class="sidebar">
+      
+      <!-- Home link -->
+      <div class="sidebar-link">
+        <img class="sidebar-icon" src="https://supersimple.dev/exercises/youtube/icons/home.svg" alt="Home">
+        <div class="sidebar-text">Home</div>
+      </div>
+
+      <!-- Explore link -->
+      <div class="sidebar-link">
+        <img class="sidebar-icon" src="https://supersimple.dev/exercises/youtube/icons/explore.svg" alt="Explore">
+        <div class="sidebar-text">Explore</div>
+      </div>
+
+      <!-- Subscriptions link -->
+      <div class="sidebar-link">
+        <img class="sidebar-icon" src="https://supersimple.dev/exercises/youtube/icons/subscriptions.svg" alt="Subscriptions">
+        <div class="sidebar-text">Subscriptions</div>
+      </div>
+
+      <!-- Originals link -->
+      <div class="sidebar-link">
+        <img class="sidebar-icon" src="https://supersimple.dev/exercises/youtube/icons/originals.svg" alt="Originals">
+        <div class="sidebar-text">Originals</div>
+      </div>
+
+      <!-- YouTube Music link -->
+      <div class="sidebar-link">
+        <img class="sidebar-icon" src="https://supersimple.dev/exercises/youtube/icons/youtube-music.svg" alt="YouTube Music">
+        <div class="sidebar-text">YouTube Music</div>
+      </div>
+
+      <!-- Library link -->
+      <div class="sidebar-link">
+        <img src="https://supersimple.dev/exercises/youtube/icons/library.svg" alt="Library">
+        <div class="sidebar-text">Library</div>
+      </div>
+    </div>
+
+    <!-- ===============================================
+         VIDEO GRID: Main content area with video cards
+         =============================================== -->
+    <div class="video-grid">
+
+      <!-- ========== VIDEO CARD 1 ========== -->
+      <div class="video-preview">
+        <!-- Clickable thumbnail -->
+        <a class="video-link" href="https://www.youtube.com/watch?v=n2RNcPRtAiY">
+          <div class="thumbnail-row">
+            <!-- Video thumbnail image -->
+            <img class="thumbnail" src="https://supersimple.dev/exercises/youtube/thumbnails/thumbnail-1.webp" alt="Video Thumbnail">
+            <!-- Video duration badge (bottom-right of thumbnail) -->
+            <div class="video-time">14:20</div>
+          </div>
+        </a>
+
+        <!-- Video info: profile picture + text -->
+        <div class="video-info-grid">
+          <!-- Channel profile picture -->
+          <div class="channel-picture">
+            <a class="channel-link" href="https://www.youtube.com/@mkbhd">
+              <img class="profile-picture" src="https://supersimple.dev/exercises/youtube/channel-profile-pics/channel-1.jpeg" alt="Channel Profile">
+            </a>
+          </div>
+
+          <!-- Video title, author, stats -->
+          <div class="video-info">
+            <!-- Video title (clickable) -->
+            <a class="video-link" href="https://www.youtube.com/watch?v=n2RNcPRtAiY">
+              <p class="video-title">Talking Tech and AI with Google CEO Sundar Pichai!</p>
+            </a>
+            <!-- Channel name (clickable) -->
+            <a class="channel-link" href="https://www.youtube.com/@mkbhd">
+              <p class="video-author">Marques Brownlee</p>
+            </a>
+            <!-- View count and upload time -->
+            <p class="video-stats">3.4M views &#183; 6 months ago</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== VIDEO CARD 2 ========== -->
+      <div class="video-preview">
+        <a class="video-link" href="https://www.youtube.com/watch?v=mP0RAo9SKZk">
+          <div class="thumbnail-row">
+            <img class="thumbnail" src="https://supersimple.dev/exercises/youtube/thumbnails/thumbnail-2.webp" alt="Video Thumbnail">
+            <div class="video-time">8:22</div>
+          </div>
+        </a>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <a class="channel-link" href="https://www.youtube.com/c/markiplier">
+              <img class="profile-picture" src="https://supersimple.dev/exercises/youtube/channel-profile-pics/channel-2.jpeg" alt="Channel Profile">
+            </a>
+          </div>
+          <div class="video-info">
+            <a class="video-link" href="https://www.youtube.com/watch?v=mP0RAo9SKZk">
+              <p class="video-title">Try Not To Laugh Challenge #9</p>
+            </a>
+            <a class="channel-link" href="https://www.youtube.com/c/markiplier">
+              <p class="video-author">Markiplier</p>
+            </a>
+            <p class="video-stats">19M views &#183; 4 years ago</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== VIDEO CARD 3 ========== -->
+      <div class="video-preview">
+        <a class="video-link" href="https://www.youtube.com/watch?v=FgjPQQeTh1w">
+          <div class="thumbnail-row">
+            <img class="thumbnail" src="https://supersimple.dev/exercises/youtube/thumbnails/thumbnail-3.webp" alt="Video Thumbnail">
+            <div class="video-time">9:13</div>
+          </div>
+        </a>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <a class="channel-link" href="https://www.youtube.com/user/SSSniperWolf">
+              <img class="profile-picture" src="https://supersimple.dev/exercises/youtube/channel-profile-pics/channel-3.jpeg" alt="Channel Profile">
+            </a>
+          </div>
+          <div class="video-info">
+            <a class="video-link" href="https://www.youtube.com/watch?v=FgjPQQeTh1w">
+              <!-- Line break in title for formatting -->
+              <p class="video-title">Crazy Tik Toks Taken Moments<br>Before DISASTER</p>
+            </a>
+            <a class="channel-link" href="https://www.youtube.com/user/SSSniperWolf">
+              <p class="video-author">SSSniperWolf</p>
+            </a>
+            <p class="video-stats">12M views &#183; 1 year ago</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== VIDEO CARD 4 ========== -->
+      <div class="video-preview">
+        <a class="video-link" href="https://www.youtube.com/watch?v=FgjPQQeTh1w">
+          <div class="thumbnail-row">
+            <img class="thumbnail" src="https://supersimple.dev/exercises/youtube/thumbnails/thumbnail-4.webp" alt="Video Thumbnail">
+            <div class="video-time">22:09</div>
+          </div>
+        </a>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <a class="channel-link" href="https://www.youtube.com/c/veritasium">
+              <img class="profile-picture" src="https://supersimple.dev/exercises/youtube/channel-profile-pics/channel-4.jpeg" alt="Channel Profile">
+            </a>
+          </div>
+          <div class="video-info">
+            <a class="video-link" href="https://www.youtube.com/watch?v=FgjPQQeTh1w">
+              <p class="video-title">The Simplest Math Problem No One Can Solve - Collatz Conjecture</p>
+            </a>
+            <a class="channel-link" href="https://www.youtube.com/c/veritasium">
+              <p class="video-author">Veritasium</p>
+            </a>
+            <p class="video-stats">18M views &#183; 4 months ago</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== VIDEO CARD 5 ========== -->
+      <div class="video-preview">
+        <a class="video-link" href="https://www.youtube.com/watch?v=86CQq3pKSUw">
+          <div class="thumbnail-row">
+            <img class="thumbnail" src="https://supersimple.dev/exercises/youtube/thumbnails/thumbnail-5.webp" alt="Video Thumbnail">
+            <div class="video-time">17:11</div>
+          </div>
+        </a>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <a class="channel-link" href="https://www.youtube.com/c/CSDojo">
+              <img class="profile-picture" src="https://supersimple.dev/exercises/youtube/channel-profile-pics/channel-5.jpeg" alt="Channel Profile">
+            </a>
+          </div>
+          <div class="video-info">
+            <a class="video-link" href="https://www.youtube.com/watch?v=86CQq3pKSUw">
+              <p class="video-title">Kadane's Algorithm to Maximum Sum Subarray Problem</p>
+            </a>
+            <a class="channel-link" href="https://www.youtube.com/c/CSDojo">
+              <p class="video-author">CS Dojo</p>
+            </a>
+            <p class="video-stats">519K views &#183; 5 years ago</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== VIDEO CARD 6 ========== -->
+      <div class="video-preview">
+        <a class="video-link" href="https://www.youtube.com/watch?v=yXWw0_UfSFg">
+          <div class="thumbnail-row">
+            <img class="thumbnail" src="https://supersimple.dev/exercises/youtube/thumbnails/thumbnail-6.webp" alt="Video Thumbnail">
+            <div class="video-time">19:59</div>
+          </div>
+        </a>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <a class="channel-link" href="https://www.youtube.com/channel/UCX6OQ3DkcsbYNE6H8uQQuVA">
+              <img class="profile-picture" src="https://supersimple.dev/exercises/youtube/channel-profile-pics/channel-6.jpeg" alt="Channel Profile">
+            </a>
+          </div>
+          <div class="video-info">
+            <a class="video-link" href="https://www.youtube.com/watch?v=yXWw0_UfSFg">
+              <p class="video-title">Anything You Can Fit In The Circle I'll Pay For</p>
+            </a>
+            <a class="channel-link" href="https://www.youtube.com/channel/UCX6OQ3DkcsbYNE6H8uQQuVA">
+              <p class="video-author">MrBeast</p>
+            </a>
+            <p class="video-stats">141M views &#183; 1 year ago</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== VIDEO CARD 7 ========== -->
+      <div class="video-preview">
+        <a class="video-link" href="https://www.youtube.com/watch?v=fNVa1qMbF9Y">
+          <div class="thumbnail-row">
+            <img class="thumbnail" src="https://supersimple.dev/exercises/youtube/thumbnails/thumbnail-7.webp" alt="Video Thumbnail">
+            <div class="video-time">10:13</div>
+          </div>
+        </a>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <a class="channel-link" href="https://www.youtube.com/channel/UCP5tjEmvPItGyLhmjdwP7Ww">
+              <img class="profile-picture" src="https://supersimple.dev/exercises/youtube/channel-profile-pics/channel-7.jpeg" alt="Channel Profile">
+            </a>
+          </div>
+          <div class="video-info">
+            <a class="video-link" href="https://www.youtube.com/watch?v=fNVa1qMbF9Y">
+              <p class="video-title">Why Planes Don't Fly Over Tibet</p>
+            </a>
+            <a class="channel-link" href="https://www.youtube.com/channel/UCP5tjEmvPItGyLhmjdwP7Ww">
+              <p class="video-author">RealLifeLore</p>
+            </a>
+            <p class="video-stats">6.6M views &#183; 1 year ago</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== VIDEO CARD 8 ========== -->
+      <div class="video-preview">
+        <a class="video-link" href="https://www.youtube.com/watch?v=lFm4EM1juls">
+          <div class="thumbnail-row">
+            <img class="thumbnail" src="https://supersimple.dev/exercises/youtube/thumbnails/thumbnail-8.webp" alt="Video Thumbnail">
+            <div class="video-time">7:12</div>
+          </div>
+        </a>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <a class="channel-link" href="https://www.youtube.com/channel/UCHAK6CyegY22Zj2GWrcaIxg">
+              <img class="profile-picture" src="https://supersimple.dev/exercises/youtube/channel-profile-pics/channel-8.jpeg" alt="Channel Profile">
+            </a>
+          </div>
+          <div class="video-info">
+            <a class="video-link" href="https://www.youtube.com/watch?v=lFm4EM1juls">
+              <p class="video-title">Inside The World's Biggest Passenger Plane</p>
+            </a>
+            <a class="channel-link" href="https://www.youtube.com/channel/UCHAK6CyegY22Zj2GWrcaIxg">
+              <p class="video-author">Tech Vision</p>
+            </a>
+            <p class="video-stats">3.7M views &#183; 10 months ago</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== VIDEO CARD 9 ========== -->
+      <div class="video-preview">
+        <a class="video-link" href="https://www.youtube.com/watch?v=ixmxOlcrlUc">
+          <div class="thumbnail-row">
+            <img class="thumbnail" src="https://supersimple.dev/exercises/youtube/thumbnails/thumbnail-9.webp" alt="Video Thumbnail">
+            <div class="video-time">13:17</div>
+          </div>
+        </a>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <a class="channel-link" href="https://www.youtube.com/c/OFFICIALTHENXSTUDIOS">
+              <img class="profile-picture" src="https://supersimple.dev/exercises/youtube/channel-profile-pics/channel-9.jpeg" alt="Channel Profile">
+            </a>
+          </div>
+          <div class="video-info">
+            <a class="video-link" href="https://www.youtube.com/watch?v=ixmxOlcrlUc">
+              <p class="video-title">The SECRET to Super Human STRENGTH</p>
+            </a>
+            <a class="channel-link" href="https://www.youtube.com/c/OFFICIALTHENXSTUDIOS">
+              <p class="video-author">ThenX</p>
+            </a>
+            <p class="video-stats">20M views &#183; 3 years ago</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== VIDEO CARD 10 ========== -->
+      <div class="video-preview">
+        <a class="video-link" href="https://www.youtube.com/watch?v=R2vXbFp5C9o">
+          <div class="thumbnail-row">
+            <img class="thumbnail" src="https://supersimple.dev/exercises/youtube/thumbnails/thumbnail-10.webp" alt="Video Thumbnail">
+            <div class="video-time">7:53</div>
+          </div>
+        </a>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <a class="channel-link" href="https://www.youtube.com/user/businessinsider">
+              <img class="profile-picture" src="https://supersimple.dev/exercises/youtube/channel-profile-pics/channel-10.jpeg" alt="Channel Profile">
+            </a>
+          </div>
+          <div class="video-info">
+            <a class="video-link" href="https://www.youtube.com/watch?v=R2vXbFp5C9o">
+              <p class="video-title">How The World's Largest Cruise Ship Makes 30,000 Meals Every Day</p>
+            </a>
+            <a class="channel-link" href="https://www.youtube.com/user/businessinsider">
+              <p class="video-author">Business Insider</p>
+            </a>
+            <p class="video-stats">24M views &#183; 1 year ago</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== VIDEO CARD 11 ========== -->
+      <div class="video-preview">
+        <a class="video-link" href="https://www.youtube.com/watch?v=0nZuYyXET3s">
+          <div class="thumbnail-row">
+            <img class="thumbnail" src="https://supersimple.dev/exercises/youtube/thumbnails/thumbnail-11.webp" alt="Video Thumbnail">
+            <div class="video-time">4:10</div>
+          </div>
+        </a>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <a class="channel-link" href="https://www.youtube.com/c/Destinationtips">
+              <img class="profile-picture" src="https://supersimple.dev/exercises/youtube/channel-profile-pics/channel-11.jpeg" alt="Channel Profile">
+            </a>
+          </div>
+          <div class="video-info">
+            <a class="video-link" href="https://www.youtube.com/watch?v=0nZuYyXET3s">
+              <p class="video-title">Dubai's Crazy Underwater Train and Other Things #Only in Dubai</p>
+            </a>
+            <a class="channel-link" href="https://www.youtube.com/c/Destinationtips">
+              <p class="video-author">Destination Tips</p>
+            </a>
+            <p class="video-stats">3M views &#183; 1 year ago</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== VIDEO CARD 12 ========== -->
+      <div class="video-preview">
+        <a class="video-link" href="https://www.youtube.com/watch?v=9iMGFqMmUFs">
+          <div class="thumbnail-row">
+            <img class="thumbnail" src="https://supersimple.dev/exercises/youtube/thumbnails/thumbnail-12.webp" alt="Video Thumbnail">
+            <div class="video-time">4:51</div>
+          </div>
+        </a>
+        <div class="video-info-grid">
+          <div class="channel-picture">
+            <a class="channel-link" href="https://www.youtube.com/teded">
+              <img class="profile-picture" src="https://supersimple.dev/exercises/youtube/channel-profile-pics/channel-12.jpeg" alt="Channel Profile">
+            </a>
+          </div>
+          <div class="video-info">
+            <a class="video-link" href="https://www.youtube.com/watch?v=9iMGFqMmUFs">
+              <p class="video-title">What would happen if you didn't drink water? - Mia Nacamulli</p>
+            </a>
+            <a class="channel-link" href="https://www.youtube.com/teded">
+              <p class="video-author">TED-Ed</p>
+            </a>
+            <p class="video-stats">12M views &#183; 5 years ago</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- End of video-grid -->
+
+  </body>
+</html>

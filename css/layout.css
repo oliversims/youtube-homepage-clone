@@ -1,0 +1,163 @@
+/* ===============================================
+   LAYOUT: HEADER (TOP BAR)
+   =============================================== */
+
+.header {
+  display: flex;                          /* Arrange children (left, middle, right) in a row */
+  flex-direction: row;                    /* Horizontal layout (explicit) */
+  justify-content: space-between;         /* Left section to left, right section to right */
+  align-items: center;                    /* Vertically center everything */
+  height: 56px;                           /* Header height */
+  background-color: white;                /* White header background */
+  position: fixed;                        /* Stick to top of the viewport when scrolling */
+  top: 0;                                 /* Position at top edge */
+  left: 0;                                /* Stretch from left edge */
+  right: 0;                               /* Stretch to right edge */
+  z-index: 100;                           /* Appear above video content */
+  border-bottom: 1px solid rgb(229, 229, 229); /* Thin bottom border line */
+}
+
+/* ----- Header: Left section (menu + logo) ----- */
+
+.left-section {
+  display: flex;        /* Put hamburger and logo side-by-side */
+  align-items: center;  /* Vertically center both icons */
+  margin-left: 20px;    /* Space from left edge of screen */
+}
+
+/* ----- Header: Middle section (search area) ----- */
+
+.middle-section {
+  display: flex;        /* Arrange search bar, search button, voice button in a row */
+  flex: 1;              /* Take up remaining horizontal space between left and right sections */
+  max-width: 450px;     /* Don't let search area get too wide on large screens */
+  align-items: center;  /* Vertically center search elements */
+  margin-left: 60px;    /* Space between logo and search area */
+  margin-right: 40px;   /* Space between search area and right icons */
+}
+
+/* Search input itself (layout-level properties only) */
+.search-bar {
+  flex: 1;                              /* Expand to take available space in middle-section */
+  height: 35px;                         /* Height of the input field */
+  padding-left: 12px;                   /* Inner left padding so text doesn’t touch the edge */
+  font-size: 16px;                      /* Text size inside the input */
+  border: 1px solid rgb(192, 192, 192); /* Light gray border */
+  border-radius: 2px 0 0 2px;           /* Rounded corners on left side only */
+  width: 0;                             /* Needed with flex:1 so it shrinks on small screens */
+  margin-top: 10px;                     /* Space above the input */
+  margin-bottom: 10px;                  /* Space below the input */
+}
+
+/* When user clicks inside the search bar */
+.search-bar:focus {
+  outline: none;              /* Remove default blue glow/outline */
+  border: 1px solid #1c62b9;  /* Thin blue border when focused (YouTube blue) */
+}
+
+/* Search button next to input (layout) */
+.search-button {
+  height: 38.4px;                       /* Slightly taller than input to visually match */
+  width: 60px;                          /* Fixed button width */
+  border: 1px solid rgb(192, 192, 192); /* Same gray border as input */
+  border-left: none;                    /* Remove left border to connect to input */
+  border-radius: 0 2px 2px 0;           /* Rounded corners on right side only */
+  background-color: rgb(248, 248, 248); /* Light gray background */
+  display: flex;                        /* Center icon inside button */
+  align-items: center;                  /* Vertically center */
+  justify-content: center;              /* Horizontally center */
+  font-size: 16px;                      /* For text/icon size (if used) */
+  cursor: pointer;                      /* Show hand cursor on hover */
+}
+
+/* Voice search circular button */
+.voice-button {
+  margin-left: 10px;                    /* Space between search button and voice button */
+  height: 38.4px;                       /* Same height as search button */
+  width: 38.4px;                        /* Square button */
+  border: none;                         /* No visible border */
+  border-radius: 20px;                  /* Make it circular (half of width/height) */
+  background-color: rgb(248, 248, 248); /* Light gray background */
+  display: flex;                        /* Center icon inside the circle */
+  align-items: center;                  /* Vertically center */
+  justify-content: center;              /* Horizontally center */
+  cursor: pointer;                      /* Hand cursor on hover */
+}
+
+/* ----- Header: Right section (icons + user) ----- */
+
+.right-section {
+  display: flex;        /* Arrange icons horizontally */
+  align-items: center;  /* Vertically center icons */
+  gap: 20px;            /* Equal space between each direct child in this section */
+  flex-shrink: 0;       /* Don't allow right-section to shrink if screen is narrow */
+  margin-right: 20px;   /* Space from right edge of screen */
+  margin-bottom: 5px;   /* Slight tweak to vertical alignment with header */
+}
+
+/* ===============================================
+   LAYOUT: SIDEBAR (LEFT NAVIGATION)
+   =============================================== */
+
+.sidebar {
+  position: fixed;          /* Stay fixed when scrolling */
+  top: 56px;                /* Start right below the header (56px high) */
+  left: 0;                  /* Stick to left edge */
+  bottom: 0;                /* Stretch to bottom of viewport */
+  width: 80px;              /* Sidebar width */
+  background-color: white;  /* White background */
+  z-index: 200;             /* Above main content (and even above header) */
+  padding-top: 0px;         /* No extra top padding */
+}
+
+/* Each clickable item in the sidebar */
+.sidebar-link {
+  display: flex;           /* Use flexbox for vertical layout */
+  align-items: center;     /* Horizontally center content */
+  height: 85px;            /* Height of each sidebar item */
+  justify-content: center; /* Vertically center content */
+  flex-direction: column;  /* Stack icon above text */
+  cursor: pointer;         /* Show hand cursor on hover */
+  text-align: center;      /* Center the label text */
+}
+
+/* Label text under each sidebar icon */
+.sidebar-link div {
+  font-family: Arial, sans-serif; /* Font style for sidebar labels */
+  font-size: 10px;                /* Small label size */
+  text-align: center;             /* Center text horizontally */
+  line-height: 1.3;               /* Space between lines if label wraps */
+}
+
+/* Hover effect for each sidebar item */
+.sidebar-link:hover {
+  background-color: rgb(235, 235, 235); /* Light gray background on hover */
+}
+
+/* Icon image inside each sidebar link */
+.sidebar-link img {
+  height: 23px;       /* Icon height */
+  margin-bottom: 4px; /* Space between icon and label text */
+}
+
+/* Used if you want to hide sidebar text visually but keep it in the DOM */
+.sidebar-text {
+  font-size: 0px;  /* 0px text size = invisible text, useful if you only want icons */
+}
+
+/* ===============================================
+   LAYOUT: VIDEO GRID (CARD POSITIONS)
+   =============================================== */
+
+.video-grid {
+  display: grid;                                          /* Use CSS Grid layout for cards */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Responsive columns: min 240px each */
+  column-gap: 15px;                                       /* Horizontal gaps between cards */
+  row-gap: 30px;                                          /* Vertical gaps between rows */
+  margin-left: 80px;                                      /* Leave space for 80px-wide sidebar */
+  margin-bottom: 10px;                                   /* Space below grid */
+}
+
+.video-preview {
+  width: 100%;  /* Each video card fills the width of its grid cell */
+}
