@@ -20,7 +20,7 @@ This project was built as a deep-dive into front-end fundamentals. The goal was 
 - **Notification Badges**: Absolute-positioned badges on the notification icon.
 
 ## 📸 Screenshots
-*(You can add a screenshot here later by uploading an image to GitHub and linking it)*
+![YouTube Clone Screenshot](youtube-clone-preview.png)
 
 ## 🧠 What I Learned
 - How to organize CSS into multiple files (`base`, `layout`, `components`) for better maintainability.
