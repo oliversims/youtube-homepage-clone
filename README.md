@@ -19,7 +19,7 @@ This project was built as a deep-dive into front-end fundamentals. The goal was 
 - **Search Bar Focus**: Custom blue border styling when the search bar is active.
 - **Notification Badges**: Absolute-positioned badges on the notification icon.
 
-## 📸 Screenshots
+## 📸 Screenshot
 ![YouTube Clone Screenshot](youtube-clone-preview.png)
 
 ## 🧠 What I Learned
